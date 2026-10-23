@@ -21,21 +21,34 @@
 
 > 商业项目源码不便公开，这里放功能说明与技术要点。需要看细节可以单独约演示。
 
-### 生鲜水产小程序
+### 往事如书 · 面向老年人的 AI 回忆录 / 陪伴产品（全栈自研）
 
-微信小程序形态的生鲜商品业务系统，覆盖商品展示、下单、订单详情与后台管理。
+一套三端的完整产品：**PHP 后端 + Vue 用户端 + Vue 管理后台**。
 
-- **技术栈**：微信小程序（TypeScript + SCSS）、`miniprogram` 业务目录、独立 TypeScript 类型声明
-- **业务模块**：商品与规格选择、购物车与下单、订单状态流转、订单详情页
-- **工程实践**：ESLint + TypeScript 严格模式；微信开发者工具工程配置与本地私有配置分离
+- **后端 `memoir-run`**：PHP 8.2 + ThinkPHP 8 + MySQL。SSE 流式输出让 AI 回复逐字返回；接 OpenAI 兼容接口（DeepSeek）实现 AI 晚辈对话；百度 ASR 语音识别 + edge-tts 语音合成；回忆事件抽取；导出 Markdown / EPUB / PDF；家庭令牌鉴权与管理员鉴权中间件双轨隔离
+- **用户端 `memoir-web-vue`**：Vue 3 + Vite + Vue Router，**不依赖 UI 框架**，自研设计令牌与轻量组件。AI 对话、跨会话/跨天的长期记忆、录音→识别→语音回复、回忆录时间轴与章节、大字号高对比的适老化无障碍设计
+- **管理后台 `adminBook`**：Vue 3 + Vite 独立部署。家庭 / 成员 / 会话 / 回忆事件的数据管理与运营配置，`X-User-Token` 鉴权访问 `/api/v1/admin/*`
+
+### 旭华小程序后台（PHP / ThinkPHP 6）
+
+- **技术栈**：PHP 7.2+ / ThinkPHP 6 / ThinkORM 2 / MySQL
+- **业务模块**：员工账号与令牌鉴权、订单管理、订单物流跟踪与轨迹详情、企业微信回调接入（WeWorkCallback）、订单备注
+- **工程实践**：`.htaccess` 与 `nginx.htaccess` 双环境 URL 重写、`router.php` 兼容入口、`.example.env` 环境隔离、Travis CI、Composer 依赖锁定
+
+### 生鲜水产小程序（微信小程序 / TypeScript）
+
+- **技术栈**：微信小程序原生工程（TypeScript + SCSS）、`miniprogram-api-typings` 类型声明、ESLint + TypeScript 严格模式
+- **业务模块**：登录、首页、商品下单、订单列表与全部订单、订单详情、订单备注、物流跟踪与轨迹详情、个人中心
+- **工程实践**：微信开发者工具的工程配置与本地私有配置分离（`project.config.json` / `project.private.config.json`），独立的 `typings/` 类型目录
 
 ## 技术栈
 
 ```text
-后端    PHP（ThinkPHP / Laravel / Composer 生态）、MySQL、Redis
-前端    Vue2 / Vue3、JavaScript、TypeScript
-工程    Nginx / 宝塔、Docker、Git、CI/CD、GitHub Actions
-其他    微信小程序（TypeScript + SCSS）、大模型 API 接入（OpenAI 兼容协议）、MySQL 索引与分表优化
+后端    PHP 7.2-8.2、ThinkPHP 6 / 8、ThinkORM、MySQL、Redis
+前端    Vue 3 + Vite + Vue Router、JavaScript、TypeScript（自研设计令牌，不依赖 UI 框架）
+小程序  微信小程序原生（TypeScript + SCSS）
+工程    Nginx、Apache（.htaccess）、宝塔、Docker、Travis CI、Composer、Git
+其他    大模型 API 接入（OpenAI 兼容）、SSE 流式、ASR 语音识别、TTS 语音合成
 ```
 
 ## 合作方式
