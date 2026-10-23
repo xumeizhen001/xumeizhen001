@@ -1,16 +1,52 @@
-## Hi there 👋
+# 许美珍 · 乱世安_
 
-<!--
-**xumeizhen001/xumeizhen001** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+**PHP + MySQL 后端 / Vue + TypeScript 前端** —— 专做中小型业务系统与管理后台。
 
-Here are some ideas to get you started:
+晚上 18:30–23:30 接单，当晚响应，源码交付。
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## 能接的活
+
+| 方向 | 具体内容 |
+| --- | --- |
+| 企业管理后台 | 用户体系、角色权限（RBAC）、订单/库存/审批流、操作日志、数据字典、Excel/CSV 导入导出、报表与统计 |
+| 第三方 API 对接 | 微信支付/支付宝、物流单号、短信、发票、企业微信/钉钉、ERP、快递鸟；签名加解密、幂等重试、失败告警 |
+| 小程序 / App 后端 | 登录鉴权、下单支付、订单状态机，后台管理端，可配 Vue 前端一起交付 |
+| 老系统接手改造 | ThinkPHP / Laravel / 原生 PHP 的历史代码接手，加功能、重构模块、清理临时方案 |
+| MySQL 性能优化 | 索引设计、大表分表、统计查询卡顿、N+1 查询治理 |
+| 数据处理脚本 | Excel/CSV 清洗合并、批量导入导出、对账脚本 |
+| 大模型 API 接入 | 把现有系统接上 DeepSeek / 通义 / Kimi 等 OpenAI 兼容接口，智能客服、文本生成、报表解读，数据留在自己服务器 |
+| 部署与运维 | 宝塔 / Nginx、Docker、CI/CD、备份定时任务、域名证书、迁移上线 |
+
+## 项目
+
+> 商业项目源码不便公开，这里放功能说明与技术要点。需要看细节可以单独约演示。
+
+### 生鲜水产小程序
+
+微信小程序形态的生鲜商品业务系统，覆盖商品展示、下单、订单详情与后台管理。
+
+- **技术栈**：微信小程序（TypeScript + SCSS）、`miniprogram` 业务目录、独立 TypeScript 类型声明
+- **业务模块**：商品与规格选择、购物车与下单、订单状态流转、订单详情页
+- **工程实践**：ESLint + TypeScript 严格模式；微信开发者工具工程配置与本地私有配置分离
+
+## 技术栈
+
+```text
+后端    PHP（ThinkPHP / Laravel / Composer 生态）、MySQL、Redis
+前端    Vue2 / Vue3、JavaScript、TypeScript
+工程    Nginx / 宝塔、Docker、Git、CI/CD、GitHub Actions
+其他    微信小程序（TypeScript + SCSS）、大模型 API 接入（OpenAI 兼容协议）、MySQL 索引与分表优化
+```
+
+## 合作方式
+
+- **远程优先**，晚上 18:30–23:30 固定在线，白天消息当天回
+- **明码报价**，开工前先给工期与价格范围；不合适会直接说做不了，不硬接
+- **交付含**：Git 私有仓库 → 分阶段验收 → 源码 + 数据库设计 + 部署文档 + 1 个月 bug 修复
+- **第三方费用**（服务器、短信、地图 API 等）开工前说清谁承担，不事后追加
+
+## 联系方式
+
+- GitHub：https://github.com/xumeizhen001
+- 微信 / 邮箱：见接单帖
+
